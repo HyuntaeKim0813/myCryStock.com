@@ -1,0 +1,14 @@
+<%- include('../../includes/head', { pageTitle: 'Stocklist' }) %>
+</head>
+<body>
+    <%- include('../../includes/header') %>
+    <main>
+        <h1>stock list</h1>
+        <ul>
+            <% for (let item of data.result) { %>
+                <li><%= item.description %> - <%= item.displaySymbol %> - <%= item.type %></li>
+            <% } %>
+        </ul>
+        <button>Save!</button>
+    </main>
+<%- include('../../includes/footer') %>
