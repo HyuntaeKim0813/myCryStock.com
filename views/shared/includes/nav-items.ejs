@@ -1,0 +1,23 @@
+<ul class="nav-items">
+    <li id="mobile-logo">
+        <a href="/">myCryStock.com</a>
+    </li>
+    <li>
+        <a href="">Portfolio</a>
+    </li>
+    <li><a href="">Korean</a></li>
+    <li><a href="">English</a></li>
+    <% if(locals.isAuth) {%>
+        <li>
+            <form action="/logout" method="POST">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                <button class="btn">Logout</button>
+            </form>
+        </li>
+    <% }%>
+    <% if(!locals.isAuth) {%>
+    <li>
+        <a href="/login">Login</a>
+    </li>
+    <% }%>
+</ul>
