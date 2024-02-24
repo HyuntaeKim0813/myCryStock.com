@@ -1,8 +1,11 @@
 <ul>
-    <li>
-        <input type="text">
-    </li>
-    <li>
-        <button class="btn">Search</button>
-    </li>
+    <form action="/stock" method="post">
+        <li>
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+            <input type="text" name="stock">
+        </li>
+        <li>
+            <button class="btn">Search</button>
+        </li>
+    </form>
 </ul>

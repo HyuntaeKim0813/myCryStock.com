@@ -14,6 +14,7 @@ html {
     --color-error-100: rgb(255, 192, 180);
     --color-error-500: rgb(199, 51, 15);
 
+    --color-primary-400-bg: rgb(63, 190, 184);
     --color-primary-500-bg: rgb(58, 175, 169);
     --color-primary-600-bg:rgb(41,41,41);
 
@@ -80,4 +81,19 @@ img{
     100% { opacity: 1; }
 }
 
+.alert{
+    border-radius: var(--border-radius-small);
+    background-color: var(--color-error-100);
+    color:var(--color-error-500);
+    padding: var(--space-4);
+}
 
+.alert h2{
+    font-size: 1rem;
+    margin: var(--space-2) 0;
+    text-transform: uppercase;
+}
+
+.alert p {
+    margin: var(--space-2) 0;
+}

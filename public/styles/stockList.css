@@ -1,0 +1,31 @@
+#stockList{
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Align items evenly along the main axis */
+    border: 1px solid black;
+    border-radius: var(--border-radius-small);
+    align-items: center;
+    margin: var(--space-2) 0;
+    padding: var(--space-2);
+    color: black;
+}
+#stockListi button{
+    margin: 0;
+    justify-content: right;
+}
+#stockList .btn-container {
+    /* Container for buttons */
+    display: flex; /* Use flexbox */
+}
+
+#stockList .btn-container button {
+    /* Style for buttons */
+    margin-left: var(--space-2); /* Add margin between buttons */
+}
+
+#ticker{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+#ticker span{
+    color: var(--color-error-500);
+}

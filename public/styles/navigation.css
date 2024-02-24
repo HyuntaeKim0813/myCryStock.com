@@ -20,7 +20,7 @@ main {
 
 #logo a{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     display: none;
 }
 
@@ -28,10 +28,10 @@ main {
     display: none;
 }
 
-#main-header #nav-input ul{
+#main-header #nav-input ul form{
     display: flex;
 }
-#main-header #nav-input ul li{
+#main-header #nav-input ul form li{
     margin: 0 var(--space-2);
 }
 #main-header #nav-input input{

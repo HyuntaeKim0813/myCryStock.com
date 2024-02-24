@@ -1,0 +1,53 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Stocklist' }) %>
+<link rel="stylesheet" href="/styles/stock-info.css">
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+        <div id="stock-info-header">
+            <img src="<%= stockInfo.logo %>" id="company-logo" alt="Company Logo">
+            <div>
+                <h1>Company Name: <%= stockInfo.name %></h1>
+               
+            </div>
+            <form action="">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                <button class="btn">Save</button>
+            </form>
+        </div>
+        
+        <section id="company-profile">
+            <h2>Company Profile</h2>
+            <div>
+                <span>Listed On: <%= stockInfo.exchange %></span> |
+                <span class="important">Industry: <%= stockInfo.finnhubIndustry %></span>
+
+            </div>
+            <p>Coutnry & Currency: <%= stockInfo.country %> | <%= stockInfo.currency %></p>
+            <p>IPO DATE: <%= stockInfo.ipo %></p>
+            <p>Market Cap:<%= stockInfo.marketCapitalization %> </p>
+            <p>Outstanding Share: <%= stockInfo.shareOutstanding %></p>
+            <p>Phone Number: <%= stockInfo.phone %></p>
+            <p>Website: <a href="<%= stockInfo.weburl %>" target="_blank"><%= stockInfo.weburl %></a></p>
+        </section>
+
+        <section id="company-profile">
+            <h2>Stock Value</h2>
+            <p>Current Price: <%= currentPrice.c %></p>
+            <span>Change | Percentage Change: <%= currentPrice.d %> | <%= currentPrice.dp %></span> 
+            <p>Highest Price of day: <%= currentPrice.h %> </p>
+            <p>Low Price of day: <%= currentPrice.I %> </p>
+            <p>Open Price of the day: <%= currentPrice.o %></p>
+            <p>Open Price of the day: <%= currentPrice.pc %></p>
+        </section>
+
+        <section>
+            <h2><%= stockInfo.name %> Related News </h2>
+            <ul>
+                <% for (let item of relatedNews) { %>
+                    <li><a href="<%= item.url %>" target="_blank"><%= item.category %> - <%= item.headline %></a></li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+<%- include('../../shared/includes/footer') %>

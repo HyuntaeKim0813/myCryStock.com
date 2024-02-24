@@ -1,0 +1,41 @@
+#company-logo{
+ width: 5rem;
+}
+#stock-info-header{
+    display: flex;
+    background: var(--color-primary-400-bg);
+    padding: var(--space-2);
+    margin-top: var(--space-2);
+    border-radius: var(--border-radius-medium);
+}
+#stock-info-header div {
+    display: flex; /* Add display flex to allow margin-left: auto; to work */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#stock-info-header div h1 {
+    margin: 0;
+}
+
+#stock-info-header  form {
+    margin-top: auto;
+    margin-left: auto; /* Push the form to the right */
+}
+
+/* profile */
+
+#company-profile{
+    margin: var(--space-4) 0 ;
+    background: var(--color-primary-400-bg);
+    padding: var(--space-2);
+    border-radius: var(--border-radius-medium);
+}
+#company-profile h2 {
+    margin: 0;
+}
+.important{
+    color: var(--color-error-500);
+}

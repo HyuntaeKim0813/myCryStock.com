@@ -3,7 +3,7 @@ h1{
     color: var(--color-text-400);
 }
 
-form{
+.authForm{
     max-width: 25rem;
     margin: var(--space-8) auto; 
     padding: var(--space-4);
