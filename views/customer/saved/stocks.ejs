@@ -1,0 +1,28 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Saved Stock' }) %>
+<link rel="stylesheet" href="/styles/savedStock.css">
+<script src="/scripts/stock-item-management.js" defer></script>
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+    <main>
+        <h1>Saved Stocks</h1>
+        <ul id="stock-items">
+            <% for (const stockItem of locals.stock.savedStockList) {%>
+                <li>
+                <%- include('includes/stocks-item', {item: stockItem}) %>
+                </li>
+            <% } %>
+        </ul>
+        <div id="stock-total">
+            <p>Current Total Value Of Stocks: $<span id="stock-total-Price"><%= locals.stock.totalPrice.toFixed(2) %></span></p>
+
+            <% if(locals.isAuth){ %>
+                <form action="/portfolios" method="POST">
+                    <button class="btn">Save into Portfolio</button>
+                </form>
+            <% } else { %>
+                <p>Log in to proceed and make Portfolio!</p>
+            <% } %>
+        </div>
+    </main>
+<%- include('../../shared/includes/footer') %>

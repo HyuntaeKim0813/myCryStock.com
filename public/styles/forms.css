@@ -1,0 +1,17 @@
+.authForm h2{
+    border-color: var(--color-text-400);
+    margin: var(--space-4);
+}
+label{
+    color: var(--color-text-300);
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+input, textarea{
+    font: inherit;
+    padding: var(--space-2);
+    border-radius: var(--border-radius-small);
+    border:none;
+    width: 90%;
+}

@@ -1,14 +1,24 @@
-<%- include('../../includes/head', { pageTitle: 'Stocklist' }) %>
+<%- include('../../shared/includes/head', { pageTitle: 'Stocklist' }) %>
+<link rel="stylesheet" href="/styles/stockList.css">
+<script src="/scripts/save-management.js" defer></script>
 </head>
 <body>
-    <%- include('../../includes/header') %>
+    <%- include('../../shared/includes/header') %>
     <main>
-        <h1>stock list</h1>
+        <h1 id="ticker">ALL <span><%= id %></span> TICKERS</h1>
         <ul>
-            <% for (let item of data.result) { %>
-                <li><%= item.description %> - <%= item.displaySymbol %> - <%= item.type %></li>
+            <% for (let item of stockList.result) { %>
+                <li id="stockList"><%= item.description %> - <%= item.displaySymbol %> - <%= item.type %> 
+                    <div class="btn-container">
+                        <form action="/stock-info" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                            <input type="hidden" name="symbol" value="<%= item.displaySymbol %>">
+                            <button type="submit" class="btn">View</button>
+                        </form>                        
+                        <button class="btn save-stock" data-stockid ="<%= item.displaySymbol %>" data-csrf="<%= locals.csrfToken %>" id="save-stock">Save</button>
+                    </div>
+                </li>
             <% } %>
         </ul>
-        <button>Save!</button>
     </main>
-<%- include('../../includes/footer') %>
+<%- include('../../shared/includes/footer') %>

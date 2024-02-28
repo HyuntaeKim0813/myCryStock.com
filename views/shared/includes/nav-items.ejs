@@ -1,0 +1,34 @@
+<ul class="nav-items">
+    <li id="mobile-logo">
+        <a href="/">myCryStock.com</a>
+    </li>
+    
+    <% if(!locals.isAdmin) {%>
+    <li>
+        <a href="/portfolios">Portfolio</a>
+    </li>
+    <li><a href="/save">Save <span class="badge"><%= locals.stock.totalQuantity %></span></a></li>
+    <% } %>
+
+    <% if(locals.isAdmin) {%>
+        <li><a href="">DashBoard</a></li>
+    <% } %>
+
+    <% if(locals.isAuth) {%>
+        <li>
+            <form action="/logout" method="POST">
+                <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                <button class="btn">Logout</button>
+            </form>
+        </li>
+    <% }%>
+
+    <% if(!locals.isAuth && !locals.isAdmin) {%>
+    <li>
+        <a href="/signup">Signup</a>
+    </li>
+    <li>
+        <a href="/login">Login</a>
+    </li>
+    <% }%>
+</ul>
