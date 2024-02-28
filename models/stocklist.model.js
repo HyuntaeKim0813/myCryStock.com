@@ -3,7 +3,9 @@ const finnhub = require('finnhub');
 
 class Stock{
     constructor(stockName) {
-        this.stockName = stockName
+        this.stockName = stockName;
+        this.symbol = null;
+        this.latestPrice = null;
     }
 
     static async ticker(stockSymbol) {
@@ -98,6 +100,26 @@ class Stock{
             throw error;
         }
     }
+
+    // saveData(req) {
+    //     if (this.symbol && this.latestPrice && this.stockName) {
+    //         // Assuming Express.js is used for session management
+    //         if (!req.session.savedStocks) {
+    //             req.session.savedStocks = [];
+    //         }
+    //         req.session.savedStocks.push({
+    //             symbol: this.symbol,
+    //             latestPrice: this.latestPrice,
+    //             stockName: this.stockName
+    //         });
+    //         console.log('Data saved in session:', req.session.savedStocks);
+    //         return req.session.savedStocks;
+    //     } else {
+    //         console.error('Unable to save data. Missing information.');
+    //         return null;
+    //     }
+    // }
+
 }
 
 module.exports = Stock;

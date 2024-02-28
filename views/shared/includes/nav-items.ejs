@@ -5,9 +5,9 @@
     
     <% if(!locals.isAdmin) {%>
     <li>
-        <a href="">Portfolio</a>
+        <a href="/portfolios">Portfolio</a>
     </li>
-    <li><a href="">Save</a></li>
+    <li><a href="/save">Save <span class="badge"><%= locals.stock.totalQuantity %></span></a></li>
     <% } %>
 
     <% if(locals.isAdmin) {%>

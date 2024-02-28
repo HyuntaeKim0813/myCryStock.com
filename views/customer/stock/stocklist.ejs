@@ -1,5 +1,6 @@
 <%- include('../../shared/includes/head', { pageTitle: 'Stocklist' }) %>
 <link rel="stylesheet" href="/styles/stockList.css">
+<script src="/scripts/save-management.js" defer></script>
 </head>
 <body>
     <%- include('../../shared/includes/header') %>
@@ -14,7 +15,7 @@
                             <input type="hidden" name="symbol" value="<%= item.displaySymbol %>">
                             <button type="submit" class="btn">View</button>
                         </form>                        
-                        <button class="btn">Save</button>
+                        <button class="btn save-stock" data-stockid ="<%= item.displaySymbol %>" data-csrf="<%= locals.csrfToken %>" id="save-stock">Save</button>
                     </div>
                 </li>
             <% } %>

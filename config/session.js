@@ -13,16 +13,16 @@ function createSessionStore(){
     return store;
 }
 
-function createSessionConfig(){
+function createSessionConfig() {
     return {
-        secret: 'xoKyHZfi563HI6Pa28cVFy7gLSTkT3uR',
-        resave: false,
-        saveUninitialized: false,
-        store:createSessionStore(),
-        cookie: {
-            maxAge: 1 * 24 * 60 * 60 * 1000
-        }
+      secret: 'super-secret',
+      resave: false,
+      saveUninitialized: false,
+      store: createSessionStore(),
+      cookie: {
+        maxAge: 2 * 24 * 60 * 60 * 1000
+      }
     };
-}
+  }
 
 module.exports = createSessionConfig;
