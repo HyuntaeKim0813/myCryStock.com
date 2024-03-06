@@ -1,12 +1,17 @@
 # myCryStock.com
 
-Website Objectives:
-Allow user to follow their stock | crypto with pie chart. 
+Website Purpose:
+Allowing users to track all assets such as stock | realestate | ETF | Crypto.
+Change the visualization to chart based. 
 
 Target Audience: 
-People who own stocks ~ crypto
-Age: Undefined(Every age)
-Sex: Undefined(Both)
+People who want to trace their assets.
+Age: Every Age
+Sex: ALL
+
+Skills: 
+- Combining different APIs to allow users to access stock data, crypto data, or other data.
+
 
 Technology: NodeJS | JS | EJS | HTML | CSS | MongoDB
 
@@ -24,7 +29,7 @@ NPM(Node Project Manager):
 10. Csurf: Protect CSRF attacks
 
 NPM API:
-1. Finnhub: finance data api(1min 60limits | free version)
+1. Finnhub: finance data api(1min 60 request limits | free version)
 2. Strapi: Payment API (Possible use for subscription base)
 
 DB(Database):
